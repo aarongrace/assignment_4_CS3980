@@ -68,10 +68,12 @@ The store defines a separate ProfileData type which is used to sync up with the 
 As the user ID is crucial to the functioning of other components of the full game, it is handled by its own zustand store in addition to being a part of the profileStore.
 
 ### Welcome.tsx
+![welcome](welcome.png)
 - stores formData as a component state
 - Allows users to log in, sign up, or play as a guest.
 - Sends formData to the backend and updates the profile data of the global profile zustand store. 
 - Normally uses `useNavigate` from React Router to redirect user to the dashboard, but for the purpose of this assignment, to the profile page
+
 
 #### handleLogin
 
@@ -84,3 +86,7 @@ Triggered on sign-up form submission. This function sends a `POST` request to `/
 #### handlePlayAsGuest
 
 This function allows users to skip authentication. It sets the user ID to `"guest"` and immediately navigates to the profile page
+
+## Profile.tsx
+[profile](profile.png)
+This page saves the profile data as part of its component state and updates the the information on the backend through a PUT call when the update button is clicked
